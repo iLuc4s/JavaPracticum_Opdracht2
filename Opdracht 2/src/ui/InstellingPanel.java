@@ -1,9 +1,5 @@
 package ui;
 
-public class InstellingPanel {
-
-}package ui;
-
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
