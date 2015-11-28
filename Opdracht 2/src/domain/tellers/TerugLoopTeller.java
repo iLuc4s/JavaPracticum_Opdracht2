@@ -1,20 +1,56 @@
 package domain.tellers;
-// Doel van deze teller: 1 -> 2 -> 3 -> 4 -> 5 -> 4 -> 3 -> 2 -> 1 -> 2 -> ...
+
 public class TerugLoopTeller extends Teller {
-	
+
 	private boolean oplopend;
-	
-	public TerugLoopTeller() {
-		
+
+	public TerugLoopTeller(){
+
 	}
 
-	public TerugLoopTeller(Character[] charLijst) {
-		
+	public TerugLoopTeller(Character...waarden) {
+		super (waarden);
+		this.oplopend = true;
+
 	}
-	
+
 	@Override
 	public void updateHuidigeWaarde() {
-		// TODO Auto-generated method stub
-		
+
+		int nieuweWaarde;
+
+		if (this.oplopend == true)
+		{
+			if (this.getHuidigeIndex() == (this.getMogelijkeWaarden().length - 1))
+			{
+				nieuweWaarde = (this.getMogelijkeWaarden().length) - 2;
+				this.oplopend = false;
+
+			}
+			else
+			{
+				nieuweWaarde = (this.getHuidigeIndex())+1;
+			}
+		}
+		else
+		{
+			if (this.getHuidigeIndex()==0)
+			{
+				nieuweWaarde = 1;
+				this.oplopend = true;
+			}
+			else
+			{
+				nieuweWaarde = (this.getHuidigeIndex())-1;
+			}
+		}
+
+		setHuidigeIndex(nieuweWaarde);
+
 	}
+
 }
+
+
+
+

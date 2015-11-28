@@ -1,20 +1,33 @@
 package domain.tellers;
-// Doel van deze teller: a -> b -> c -> a -> b -> c 
 
-public class CyclischeTeller extends Teller{
-
+public class CyclischeTeller extends Teller {
+	
 	public CyclischeTeller() {
 		
 	}
 	
-	public CyclischeTeller(Character[] charLijst) {
+	public CyclischeTeller (Character...waarden) {
+		
+		super(waarden);
 		
 	}
-	
+
 	@Override
 	public void updateHuidigeWaarde() {
-		// TODO Auto-generated method stub
+		int nieuweWaarde;
+		if (this.getHuidigeIndex() == (this.getMogelijkeWaarden().length - 1))
+		{
+			nieuweWaarde = 0;
+			
+		}
+		else
+		{
+			nieuweWaarde = (this.getHuidigeIndex())+1;
+		}
+		setHuidigeIndex(nieuweWaarde);
 		
 	}
-	
+
 }
+
+
