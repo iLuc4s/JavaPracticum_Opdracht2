@@ -68,7 +68,7 @@ public class InstellingController {
 
 		instellingPanel = new InstellingPanel();
 		instellingPanel.setInstellingButtonListener(new InstellingButtonListener());
-		instellingPanel.setAantalTellers(aantal);
+		//instellingPanel.setAantalTellers(aantal);
 		instellingPanel.setWaarden1(waarden1);
 		instellingPanel.setWaarden2(waarden2);
 		instellingPanel.setWaarden3(waarden3);
