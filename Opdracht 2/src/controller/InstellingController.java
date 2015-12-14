@@ -92,9 +92,9 @@ public class InstellingController {
 			 
 			 try
 			 {
-				 aantal = Integer.parseInt(instellingPanel.getAantalTellers());
-				 if (aantal > 5) {aantal = 5;}
-				 if (aantal < 1) {aantal = 1;}
+				 aantal = instellingPanel.getMaxTellers() + 1;
+				 /*if (aantal > 5) {aantal = 5;}
+				 if (aantal < 1) {aantal = 1;}*/
 				 
 				 AlleTypes = instellingPanel.getAlleTypes();
 			

@@ -42,6 +42,7 @@ public class InstellingPanel extends JPanel{
 	private JComboBox comboBox4;
 	
 	private JComboBox comboBox5;
+	private JComboBox comboBoxAantalTellers;
 	
 	private Integer[] aantalTellers = {1, 2, 3, 4, 5};
 	private List<JComboBox> comboBoxesList = new ArrayList<JComboBox>();
@@ -139,7 +140,7 @@ public class InstellingPanel extends JPanel{
       txtpnTypDeVerschillende.setBounds(477, 13, 133, 80);
       add(txtpnTypDeVerschillende);
       
-      JComboBox comboBoxAantalTellers = new JComboBox(aantalTellers);
+      comboBoxAantalTellers = new JComboBox(aantalTellers);
       comboBoxAantalTellers.addActionListener(new ActionListener() {
       	public void actionPerformed(ActionEvent arg0) {
       		
@@ -151,10 +152,10 @@ public class InstellingPanel extends JPanel{
 			for(JTextField txt : textFieldList)
 				txt.setVisible(false);
 			
-			for(int i = 0; i <= maxTellers; i++)
+			for(int i = 0; i <= getMaxTellers(); i++)
 				comboBoxesList.get(i).setVisible(true);
 			
-			for(int i = 0; i <= maxTellers; i++)
+			for(int i = 0; i <= getMaxTellers(); i++)
 				textFieldList.get(i).setVisible(true);
       	}
       });
@@ -175,9 +176,9 @@ public class InstellingPanel extends JPanel{
 	}
    
    /*
-   public String getAantalTellers()
+   public int getAantalTellers()
    {
-	   return this.textFieldAantalTellers.getText();
+	   return (int)this.comboBoxAantalTellers.getSelectedItem() -1;
    }
    
    public void setAantalTellers(Integer aantal)
@@ -185,7 +186,18 @@ public class InstellingPanel extends JPanel{
 	   String aantalText = aantal.toString();
 	   this.textFieldAantalTellers.setText(aantalText);
    }
-*/
+   */
+   
+   public int getMaxTellers()
+   {
+	   return (int)this.comboBoxAantalTellers.getSelectedItem() - 1;
+   }
+   
+   public void setMaxTellers(int aantalTellers)
+   {
+	   this.maxTellers = aantalTellers;
+   }
+   
    
    public void setTypeTeller1(int index)
    {
