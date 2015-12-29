@@ -12,7 +12,7 @@ import javax.swing.Timer;
 
 public class KluisPanel extends JPanel implements ActionListener{
    private boolean isDicht = true;
-   private int innerStraal;
+   //private int innerStraal;
    private Timer timer;
    private int teller = 0;
    
@@ -25,11 +25,12 @@ public class KluisPanel extends JPanel implements ActionListener{
 	   isDicht = dicht;
 	   if (!isDicht){
 		   teller=0;		   
-		   innerStraal = 20;
+		   //innerStraal = 20;
 		   timer.start();
 	   }	   
    }
   
+   /*
    public void paintComponent( Graphics g){
       super.paintComponent( g ); 
       int straal = this.getHeight();
@@ -46,8 +47,49 @@ public class KluisPanel extends JPanel implements ActionListener{
     		  timer.stop();
     	  }			
 	  }    	
-   } 
+   }
+   */ 
 
+   public void paintComponent(Graphics g)
+	{
+		super.paintComponent(g);
+		
+		//teken het gezicht
+		g.setColor(Color.YELLOW);
+		//(x, y, width, height)
+		g.fillOval(10, 5, 200, 145);
+		
+		//teken de ogen
+		g.setColor(Color.BLACK);
+		g.fillOval(55,  35,  30, 30);
+		g.fillOval(135, 35, 30, 30);
+		
+		if (!isDicht){
+		//nu de lach
+		//teken de mond
+		g.fillOval(50, 70, 120, 50);
+		g.setColor(Color.YELLOW);
+		g.fillRect(50, 70, 120, 20);
+		
+			if (teller <10){
+	  		  //innerStraal+=10;
+				teller++;
+	  	  	}	  
+		  	if (teller == 10){
+		  		timer.stop();
+		  	  }
+		
+		}
+		else{
+		//nu de sad
+		//teken de mond
+		g.fillOval(50, 80, 120, 50);		
+		g.setColor(Color.YELLOW);
+		g.fillRect(50, 110, 120, 20);
+		}
+	}
+   
+   
    @Override
    public void actionPerformed(ActionEvent arg0) {
 	   repaint();	

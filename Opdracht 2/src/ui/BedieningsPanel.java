@@ -27,6 +27,7 @@ public class BedieningsPanel extends JPanel{
       logPanel.setLayout(new GridLayout(1,2));
       logPanel.setBackground(Color.GRAY); 
       kluisPanel = new KluisPanel();
+      kluisPanel.setDicht(false);
       logPanel.add(kluisPanel);
       log = new JTextArea();
       log.setEditable(false);
@@ -34,7 +35,7 @@ public class BedieningsPanel extends JPanel{
       
       knoppenPanel = new JPanel();
       knoppenPanel.setLayout(new GridLayout(1,aantalKnoppen+1));      
-      controleButton = new JButton("OPEN SLOT");      
+      controleButton = new JButton("OPEN SLOT");
       knoppenPanel.add(controleButton);
       slotButtons=new JButton[aantalKnoppen];
       for (int i = 0;i < aantalKnoppen;i++){
