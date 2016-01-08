@@ -12,7 +12,6 @@ import javax.swing.Timer;
 
 public class KluisPanel extends JPanel implements ActionListener{
    private boolean isDicht = true;
-   //private int innerStraal;
    private Timer timer;
    private int teller = 0;
    
@@ -25,30 +24,10 @@ public class KluisPanel extends JPanel implements ActionListener{
 	   isDicht = dicht;
 	   if (!isDicht){
 		   teller=0;		   
-		   //innerStraal = 20;
 		   timer.start();
 	   }	   
    }
   
-   /*
-   public void paintComponent( Graphics g){
-      super.paintComponent( g ); 
-      int straal = this.getHeight();
-      g.setColor(Color.GREEN);
-      g.fillOval( this.getWidth()/2-straal/2,this.getHeight()/2-straal/2,straal,straal);
-      if (!isDicht){  	   
-    	  g.setColor(Color.GRAY);
-    	  g.fillOval( this.getWidth()/2-innerStraal/2,this.getHeight()/2-innerStraal/2,innerStraal,innerStraal);  
-    	  if (teller <10){
-    		  innerStraal+=10;
-    		  teller++;
-    	  }	  
-    	  if (teller == 10){
-    		  timer.stop();
-    	  }			
-	  }    	
-   }
-   */ 
 
    public void paintComponent(Graphics g)
 	{
@@ -56,7 +35,6 @@ public class KluisPanel extends JPanel implements ActionListener{
 		
 		//teken het gezicht
 		g.setColor(Color.YELLOW);
-		//(x, y, width, height)
 		g.fillOval(10, 5, 200, 145);
 		
 		//teken de ogen
@@ -72,7 +50,6 @@ public class KluisPanel extends JPanel implements ActionListener{
 		g.fillRect(50, 70, 120, 20);
 		
 			if (teller <10){
-	  		  //innerStraal+=10;
 				teller++;
 	  	  	}	  
 		  	if (teller == 10){
