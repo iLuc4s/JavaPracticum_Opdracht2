@@ -27,7 +27,7 @@ public class BedieningsPanel extends JPanel{
       logPanel.setLayout(new GridLayout(1,2));
       logPanel.setBackground(Color.GRAY); 
       kluisPanel = new KluisPanel();
-      kluisPanel.setDicht(false);
+      kluisPanel.setDicht(true);
       logPanel.add(kluisPanel);
       log = new JTextArea();
       log.setEditable(false);
